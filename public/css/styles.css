@@ -1,0 +1,33 @@
+h1 {
+  text-align: center;
+}
+
+body {
+  background-color: lightgray;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+li {
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+
+button.action{
+  margin-right: 50px;
+  margin-left: 130px;
+}
+
+#poop {
+  width: 25%
+}
+
+a.back {
+  margin-left: 47%;
+  font-size: 30px;
+  font-weight: bold;
+}

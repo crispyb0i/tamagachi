@@ -3,10 +3,10 @@ require('./app')
 Capybara.app = Sinatra::Application
 set(:show_exceptions, false)
 describe('places', {:type => :feature}) do
-  it('processes the user entry and returns a place they have visited') do
+  it('adds the name lil dragon') do
     visit('/')
-    fill_in('place1', :with => "Thailand")
+    fill_in('name', :with => "lil dragon")
     click_button('submit')
-    expect(page).to have_content('Your place has been added successfully back')
+    expect(page).to have_content('')
   end
 end

@@ -1,33 +1,31 @@
 class Tamagachi
   @@all_tamagachi = []
-  define_method(:initialize) do
+  define_method(:initialize) do |name|
     @name = name
     @food_level = 25
     @bathroom_level = 25
     @activity_level = 25
     @rest_level = 25
-
-    @last_feed = Time.now()
-    @last_bathroom = Time.now()
-    @last_activity = Time.now()
-    @last_rest = Time.now()
-
     @id = @@all_tamagachi.length()+(1)
 
   end
 
-define_singleton_method(:find) do |identification|
+define_singleton_method(:find) do |id_num|
     found_tamagachi = nil
     @@all_tamagachi.each() do |pet|
-      if pet.id() == id.eql?(identification.to_i())
+      if pet.id() == id_num
         found_tamagachi = pet
       end
     end
-    found_pet
+    found_tamagachi
   end
 
   define_singleton_method(:all) do
   @@tamagachi
+end
+
+define_method(:name) do
+  @name
 end
 
   define_method(:id) do
@@ -41,19 +39,19 @@ end
     @@tamagachi = []
   end
 
-  define_method(:food) do
+  define_method(:food_level) do
     @food_level
   end
 
-  define_method(:bathroom) do
+  define_method(:bathroom_level) do
     @bathroom_level
   end
 
-  define_method(:activity) do
+  define_method(:activity_level) do
     @activity_level
   end
 
-  define_method(:rest) do
+  define_method(:rest_level) do
     @rest_level
   end
 
@@ -78,12 +76,10 @@ end
   end
 
   define_method(:time_passes_feed) do
-    Time.now()-@last_feed.floor.times do
-      @food_level -= 1
+      @food_level += 1
       @rest_level -= 1
       @bathroom_level -= 1
       @activity_level -= 1
-    end
   end
 end
 end

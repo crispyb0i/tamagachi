@@ -8,7 +8,7 @@ describe(Tamagachi) do
 
 describe('#tamagachi') do
   it("sets the name and life levels of a new Tamagachi") do
-    my_pet = Tamagachi.new("lil dragon")
+    my_pet = Tamagachi.new("lil dragon",25,25,25,25,1)
    expect(my_pet.name()).to(eq("lil dragon"))
    expect(my_pet.food_level()).to(eq(25))
    expect(my_pet.bathroom_level()).to(eq(25))
